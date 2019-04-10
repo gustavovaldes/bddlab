@@ -7,18 +7,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootContextLoader;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.http.*;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -82,10 +76,7 @@ public class CommonSteps {
         }
     }
 
-    @Given("^I have a valid user$")
-    public void iHaveAValidUser() {
-        authorizationToken = "dummyValidToken";
-    }
+
 
     @When("^I make a conversion with (\\d+) USD and date (.*)$")
     public void iCallTheConversionServiceWithUSDAndData(double amount, String date) throws Throwable {
@@ -191,5 +182,10 @@ public class CommonSteps {
         lines.forEach(line -> data.append(line).append("\n"));
         lines.close();
         return data.toString();
+    }
+
+    @Given("^I have a valid user$")
+    public void iHaveAValidUser() {
+        authorizationToken = "dummyValidToken";
     }
 }

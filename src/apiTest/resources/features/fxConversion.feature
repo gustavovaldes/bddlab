@@ -5,7 +5,7 @@ Feature: Fx Conversion Usability
     Given I have a valid user
     When I make a conversion with 2 USD and date 2018-02-03
     Then I should receive a valid response
-    And I the converted amount should be 1205.5009603581 CLP
+    And I the converted amount should be 1205.5009603581486 CLP
 
   Scenario: Money Conversion from USD to CLP with data from  year 2017
     Given I have a valid user

@@ -42,9 +42,9 @@ dependencies {
 }
 
 facets {
-    integTest {
+    apiTest {
         parentSourceSet = "test"
-        testTaskName = "integrationTest"
+        testTaskName = "apiTest"
         includeInCheckLifecycle = false
     }
 }
